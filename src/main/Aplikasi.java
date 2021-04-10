@@ -8,6 +8,8 @@ import alarmsystem.Alarm;
 import classifier.IrisClassifier;
 import classifier.CustomerPredictor;
 import classifier.NeuralNetwork;
+import classifier.ColdDetector;
+import classifier.VehicleDetector;
 
 public class Aplikasi {
      public static void main(String[] args) {
@@ -27,11 +29,11 @@ public class Aplikasi {
         nilaiYangDibayarkan = pembayaran.hitungPembayaran(5000000, 0.05);
         System.out.println(nilaiYangDibayarkan);
         
+        
+        System.out.println("---------------------------------------------------");
+        
+        
         Karyawan karyawan = new Karyawan();
-        
-        
-        
-        
         int gajiSetelahPPH;
         
         //test case 1
@@ -42,11 +44,12 @@ public class Aplikasi {
         gajiSetelahPPH = karyawan.hitungGaji(4000000, 0.1, 3000000);
         System.out.println(gajiSetelahPPH);
         
-         //test case 3
+        //test case 3
         gajiSetelahPPH = karyawan.hitungGaji(500000, 0.1, 1000000);
         System.out.println(gajiSetelahPPH);
         
         
+        System.out.println("---------------------------------------------------");    
         
         
         int PPHyangHarusDibayar;
@@ -59,15 +62,16 @@ public class Aplikasi {
         PPHyangHarusDibayar = karyawan.hitungPPH(4000000, 0.1, 3000000);
         System.out.println(PPHyangHarusDibayar);
         
-         //test case 3
+        //test case 3
         PPHyangHarusDibayar = karyawan.hitungPPH(500000, 0.1, 1000000);
         System.out.println(PPHyangHarusDibayar);
         
         
+        System.out.println("---------------------------------------------------");
         
         
         int nilaiTagihanPembayaranSetelahDenda;
-        // nilai tagihan pembayaran sebelum denda, prosentase denda, tanggal jatuh tempo, bulan jatuh tempo
+        
         //test case 1
         Customer customer = new Customer();
         nilaiTagihanPembayaranSetelahDenda = customer.hitungPembayaranTagihan(400000, 0.01, 1, 4);
@@ -78,9 +82,11 @@ public class Aplikasi {
         System.out.println(nilaiTagihanPembayaranSetelahDenda);
         
         
+        System.out.println("---------------------------------------------------");
         
         
         Expert expert = new Expert();
+        
         boolean jenisTumpahan;
         
         //test case 1
@@ -120,52 +126,59 @@ public class Aplikasi {
         System.out.println(jenisTumpahan);
         
         
+        System.out.println("---------------------------------------------------");
         
         
         Alarm alarm = new Alarm();
+        
         boolean statusAlarmWarning;
         
         //test case 1
         statusAlarmWarning =alarm.isAlarmStatusWarning(55.5, true, true);
         System.out.println(statusAlarmWarning);
          
-         //test case 2
+        //test case 2
         statusAlarmWarning =alarm.isAlarmStatusWarning(60, true, true);
         System.out.println(statusAlarmWarning);
          
-         //test case 3
+        //test case 3
         statusAlarmWarning =alarm.isAlarmStatusWarning(40, true, true);
         System.out.println(statusAlarmWarning);
          
-         //test case 4
+        //test case 4
         statusAlarmWarning =alarm.isAlarmStatusWarning(55.5, false, true);
         System.out.println(statusAlarmWarning);
          
-         //test case 5
+        //test case 5
         statusAlarmWarning =alarm.isAlarmStatusWarning(60, false, true);
         System.out.println(statusAlarmWarning);
          
-         //test case 6
+        //test case 6
         statusAlarmWarning =alarm.isAlarmStatusWarning(40, false, true);
         System.out.println(statusAlarmWarning);
          
-         //test case 7
+        //test case 7
         statusAlarmWarning =alarm.isAlarmStatusWarning(55.5, false, false);
         System.out.println(statusAlarmWarning);
          
-         //test case 8
+        //test case 8
         statusAlarmWarning =alarm.isAlarmStatusWarning(60, false, false);
         System.out.println(statusAlarmWarning);
          
-         //test case 9
+        //test case 9
         statusAlarmWarning =alarm.isAlarmStatusWarning(40, false, false);
         System.out.println(statusAlarmWarning);
         
+        
         System.out.println("---------------------------------------------------");
         
+        System.out.println("---------------------------------------------------");
+        
+        
         IrisClassifier irisClassifier = new IrisClassifier();
+        
         String jenisBunga;
-        //panjang sepal, lebar sepal, panjang petal, lebar petal
+        
         //test case 1
         jenisBunga = irisClassifier.predict(4.3, 3.0, 1.1, 0.1);
         System.out.println(jenisBunga);
@@ -220,6 +233,9 @@ public class Aplikasi {
         //test case 18
         jenisBunga = irisClassifier.predict(6.2, 2.8, 4.8, 1.8);
         System.out.println(jenisBunga); 
+        
+        
+        System.out.println("---------------------------------------------------");
          
         
         CustomerPredictor customerPredictor = new CustomerPredictor();
@@ -230,53 +246,56 @@ public class Aplikasi {
         potensiMenjadiCostumer = customerPredictor.predict(0, 0, 0);
         System.out.println(potensiMenjadiCostumer); 
         
-         //test case 2
+        //test case 2
         potensiMenjadiCostumer = customerPredictor.predict(0, 0, 1);
         System.out.println(potensiMenjadiCostumer);   
         
-         //test case 3
+        //test case 3
         potensiMenjadiCostumer = customerPredictor.predict(0, 1, 0);
         System.out.println(potensiMenjadiCostumer);        
         
-         //test case 4
+        //test case 4
         potensiMenjadiCostumer = customerPredictor.predict(0, 1, 1);
         System.out.println(potensiMenjadiCostumer);        
         
-         //test case 5
+        //test case 5
         potensiMenjadiCostumer = customerPredictor.predict(1, 0, 0);
         System.out.println(potensiMenjadiCostumer);        
         
-         //test case 6
+        //test case 6
         potensiMenjadiCostumer = customerPredictor.predict(1, 0, 1);
         System.out.println(potensiMenjadiCostumer);        
         
-         //test case 7
+        //test case 7
         potensiMenjadiCostumer = customerPredictor.predict(1, 1, 0);
         System.out.println(potensiMenjadiCostumer);        
         
-         //test case 8
+        //test case 8
         potensiMenjadiCostumer = customerPredictor.predict(1, 1, 1);
         System.out.println(potensiMenjadiCostumer);        
         
-         //test case 9
+        //test case 9
         potensiMenjadiCostumer = customerPredictor.predict(2, 0, 0);
         System.out.println(potensiMenjadiCostumer);        
         
-         //test case 10
+        //test case 10
         potensiMenjadiCostumer = customerPredictor.predict(2, 0, 1);
         System.out.println(potensiMenjadiCostumer);        
         
-         //test case 11
+        //test case 11
         potensiMenjadiCostumer = customerPredictor.predict(2, 1, 0);
         System.out.println(potensiMenjadiCostumer);        
         
-         //test case 12
+        //test case 12
         potensiMenjadiCostumer = customerPredictor.predict(2, 1, 1);
-        System.out.println(potensiMenjadiCostumer);        
+        System.out.println(potensiMenjadiCostumer);   
         
+        
+        System.out.println("---------------------------------------------------");
         
         
         NeuralNetwork neuralNetwork = new NeuralNetwork();
+        
         double nilaiFungsiPiecewise;
         
         //test case 1
@@ -318,5 +337,23 @@ public class Aplikasi {
         //test case 10
         nilaiFungsiPiecewise = neuralNetwork.funcPiecewiseLinear(0.963, 0.099, 0.470, 0.194, 0.779);
         System.out.println(nilaiFungsiPiecewise);
-    }
+
+        
+        System.out.println("---------------------------------------------------");
+        
+
+        ColdDetector coldDetector = new ColdDetector(); 
+        coldDetector.uji("F:\\tugas\\GUDEK\\tugas if then else\\testcases.txt");
+        
+        
+        System.out.println("---------------------------------------------------");
+        
+           
+        VehicleDetector detector = new VehicleDetector();
+        
+        detector.uji("F:\\tugas\\GUDEK\\VehicleDetector\\testcases.csv");
+    
+        
+    }    
+    
 }
